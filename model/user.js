@@ -17,6 +17,19 @@ const userSchema = new mongoose.Schema({
         required:true,
         max:1024,
         min:6
+    },
+    image:{
+        type:String,
+        required:false,
+        max:255,
+    },
+    Amount:{
+        type:Array,
+        required:false,
+    },
+    groups:{
+        type:Array,
+        required:false
     }
 })
 
