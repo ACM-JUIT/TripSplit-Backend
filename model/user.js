@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const userSchema = new mongoose.Schema({
     name:{
         type:String,
@@ -27,10 +28,11 @@ const userSchema = new mongoose.Schema({
         type:Array,
         required:false,
     },
-    groups:{
-        type:Array,
-        required:false
-    }
+    groups:[
+        {type: mongoose.Schema.Types.ObjectId,
+        ref: 'Group'}
+    ]
 })
+
 
 module.exports = mongoose.model('User',userSchema);

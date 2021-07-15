@@ -12,17 +12,16 @@ const groupSchema = new mongoose.Schema({
         max:255,
     },
     Amount:{
-        type:String,
+        type:Number,
         required:false,
+        default:0
     },
     members:{
-        type:Array,
-        required:true
+        type:mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     },
-    admin:{
-        type:String,
-        required:true,
-    }
+    
 })
+
 
 module.exports = mongoose.model('Group',groupSchema);
